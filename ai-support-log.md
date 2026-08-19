@@ -1,7 +1,7 @@
 # AI Support Log
 
 **Case:** Case A — AI Tutor: Diagnostic Refresher  
-**Nhóm:** Nhóm 3 — E403  
+**Nhóm:** Nhóm 3  
 **Học viên:** Nguyễn Trí Trung — 2A202601594  
 
 Tài liệu này ghi chép lại quá trình tương tác giữa học viên và AI trong việc hoàn thành bài tập Day 18.

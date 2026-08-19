@@ -1,4 +1,4 @@
-# Three-Option Design Sheet
+
 
 **Case:** Case A — AI Tutor: Diagnostic Refresher  
 **Nhóm:** Nhóm 3 — E403  

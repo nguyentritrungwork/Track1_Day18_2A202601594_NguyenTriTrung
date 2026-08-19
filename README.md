@@ -9,6 +9,7 @@
   1. Phạm Tiến Đại — 2A202601610
   2. Nguyễn Trí Trung — 2A202601594
   3. Tạ Thị Thu Huyền — 2A202601782
+  4. Đỗ Thu Liễu —
 - **Case đã chọn:** Case A — AI Tutor: Diagnostic Refresher
 
 ---

@@ -1,4 +1,3 @@
-# Prototype Feedback Note
 
 **Case:** Case A — AI Tutor: Diagnostic Refresher  
 **Người thực hiện thử nghiệm (Facilitator):** Nguyễn Trí Trung — 2A202601594  
