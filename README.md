@@ -1,78 +1,58 @@
-# Track 1 - Day 18 — Designing and Testing Prototypes
+# Track1_Day18
 
 ## 1. Thông tin cá nhân và nhóm
 
-- **MHV:** 2A202601594
+- **MHV (mã học viên):** 2A202601594
 - **Họ tên:** Nguyễn Trí Trung
-- **Tên nhóm:** Nhóm 3 — E403
-- **Thành viên nhóm:**
-  1. Phạm Tiến Đại — 2A202601610
-  2. Nguyễn Trí Trung — 2A202601594
-  3. Tạ Thị Thu Huyền — 2A202601782
-  4. Đỗ Thu Liễu —
-- **Case đã chọn:** Case A — AI Tutor: Diagnostic Refresher
+- **Tên nhóm:** 666
+- **Thành viên nhóm (4 người):**
+  1. Đỗ Thu Liễu— MHV: 2A202601898
+  2. Tạ Thị Thu Huyền— MHV: 2A202601782
+  3. Phạm Tiến Đại — MHV: 2A202601610
+  4. Nguyễn Trí Trung — MHV: 2A202601594
+- **Case nhóm chọn:**
+  - AI Tutor: Diagnostic Refresher: Học viên gặp khó khăn khi theo kịp bài giảng vì không hiểu một số từ khóa hoặc kiến thức nền nhưng không biết mình đang thiếu gì, đồng thời không có thời gian tìm hiểu hoặc hỏi giảng viên khi bài giảng vẫn tiếp tục. Điều này khiến các lỗ hổng kiến thức tích tụ và ảnh hưởng đến việc tiếp thu các nội dung tiếp theo.
 
----
+## 2. Hypothesis Problem
 
-## 2. Hypothesis Problem (Bản nhóm dùng trong Day 18)
+- Vấn đề giả định (hypothesis): Khi giảng viên đang dẫn dắt một khái niệm mới trên slide, học viên gặp khó khăn trong việc theo kịp bài giảng vì hai rào cản xảy ra cùng lúc: (1) họ không hiểu một từ khóa hoặc bức tranh tổng thể đằng sau khái niệm đó, nhưng không biết chính xác đó là lỗ hổng kiến thức nền nào để tự tra cứu ngay; và (2) ngay cả khi nhận ra mình đang bị hụt, họ không có thời gian để dừng lại tìm hiểu — vì bài giảng vẫn tiếp tục trôi và họ không muốn ngắt lời hoặc làm chậm cả lớp — dẫn đến việc họ im lặng bỏ qua, tiếp tục nghe trong tình trạng mất gốc, và khoảng hụt kiến thức đó dồn lại qua các phần sau của bài giảng.
+- Đối tượng người dùng: Học viên AI thực chiến và Giảng Viên
+- Giả định cần kiểm chứng: Nếu học viên có thể nhanh chóng xác định phần mình chưa hiểu và nhận được hỗ trợ ngay trong lúc học mà không làm gián đoạn bài giảng, thì họ sẽ dễ dàng theo kịp nội dung và hạn chế tích tụ lỗ hổng kiến thức.
 
-> **Phát biểu Giả thuyết:**  
-> Khi gặp các khái niệm khó hiểu hoặc trả lời sai trong lúc học lý thuyết/làm bài, học viên khóa học ngắn hạn gặp khó khăn trong việc tự xác định và lấp đầy chính xác lỗ hổng kiến thức nền đang thiếu vì thiếu công cụ giải đáp/chẩn đoán nhanh chóng, đáng tin cậy tại chỗ, dẫn đến việc phải dùng các workaround bên ngoài (AI ngoài, hỏi bạn bè) làm đứt mạch học, hoặc đối phó chọn bừa/bỏ qua kiến thức khiến lỗ hổng bị tích tụ lâu dài.
+## 3. Three Solution Options
 
-### Tính liên tục của Evidence (Gate 1 - Evidence Continuity)
-Giả thuyết này được xây dựng và kế thừa trực tiếp từ các quan sát thực tế trong cuộc phỏng vấn ở Day 17:
-* **Nối với Observation thực tế:** Học viên Hoàng Thiết Lâm trong buổi phỏng vấn ngày 17/8/2026 thừa nhận khi giảng viên giảng nhanh trên lớp, anh bị trôi mất 2-3 phần/buổi học và không biết hỏi ai hay xem lại thế nào khi tự học trước. Workaround của Lâm là dùng ChatGPT/Claude hoặc hỏi bạn xung quanh ngay tại lớp để được giải đáp tức thì (đáp ứng 80% nhu cầu). Khi về nhà, Lâm hầu như không tự ôn tập lại các phần bị lỡ vì không có cơ chế lưu trữ tự động.
-* **Điều vẫn chưa biết (Unknowns):** Nhóm vẫn chưa chứng minh được liệu học viên có sẵn sàng từ bỏ thói quen dùng AI bên ngoài (ChatGPT, Claude) và bạn bè để tin dùng một nút bấm AI nội bộ mới hay không, và liệu việc chẩn đoán có làm họ cảm thấy mất kiên nhẫn khi đang kẹt bài tập.
+Mô tả ngắn gọn 3 phương án giải pháp và link prototype tương ứng (chi tiết đầy đủ xem tại [three-option-design-sheet.md](three-option-design-sheet.md) và [prototype-link.md](prototype-link.md)).
 
----
+| Option | Mô tả ngắn                                                                                                                            | Link prototype |
+| ------ | ---------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| A      | Hỏi trực tiếp giảng viên: Học viên gửi câu hỏi ngay trên slide để giảng viên giải đáp.                                 | [prototype-link](prototype-link)  |
+| B      | Sơ đồ kiến thức: Giúp học viên xem tổng quan bài học, nội dung chính và kiến thức liên quan của từng slide.           | [prototype-link](prototype-link)  |
+| C      | Khái niệm nền: AI giải thích từ khóa, kiểm tra kiến thức nền và xác định những phần kiến thức học viên còn thiếu. | [prototype-link](prototype-link)  |
 
-## 3. Ba phương án giải pháp (Three Solution Options)
+## 4. Đóng góp của tôi trong nhóm
 
-Chi tiết thiết kế của cả 3 option được trình bày tại: [three-option-design-sheet.md](file:///d:/Track1_Day18_2A202601594_NguyenTriTrung/three-option-design-sheet.md)
+- Option/phần tôi phụ trách: Option A (đồng phụ trách với Đỗ Thu Liễu)
+- Shared context / content đã đóng góp: Đóng góp ý tưởng và xây dựng cơ chế hỏi trực tiếp giảng viên; hỗ trợ thiết kế luồng tương tác từ slide đến giảng viên, vẽ wireframe/prototype cho Option A, thiết lập kịch bản kiểm thử cho Option A.
+- Human–AI decisions: Sử dụng ChatGPT/Claude để brainstorm, diễn đạt, so sánh các phương án và thiết kế các yếu tố Human Control cho Option A (nút thoát hiểm, thông báo trạng thái nhận câu hỏi).
+- Facilitation: Đồng facilitate phiên feedback ngày 19/8/2026, trực tiếp chạy thử nghiệm Option A với tester Phạm Tiến Đại.
+- Observation / tổng hợp feedback: Ghi nhận phản hồi của tester Phạm Tiến Đại về Option A (dễ sử dụng, cần làm nổi bật trạng thái phản hồi câu hỏi) và phối hợp cùng nhóm tổng hợp feedback cho cả 3 option.
 
-* **Option A: System-Led Diagnostic (AI-Driven)**
-  * *Mô tả:* Hệ thống chủ động dẫn dắt luồng học bằng cách đặt 2-3 câu hỏi trắc nghiệm chẩn đoán nhanh để tìm ra khái niệm nền bị hổng, sau đó hiển thị bài ôn tập (Refresher) trực quan.
-  * *Link Prototype:* [Figma Link Option A - AI-Driven Diagnostic](https://www.figma.com/proto/track1-day18-group3/option-a-system-led)
-* **Option B: User-Led Concept Selection (Cooperative)**
-  * *Mô tả:* Hệ thống đưa ra menu gợi ý 3-4 khái niệm nền liên quan. Học viên tự chọn khái niệm mình muốn ôn tập và làm bài tập tương tác (lật thẻ bài) để kiểm tra.
-  * *Link Prototype:* [Figma Link Option B - Concept Selection](https://www.figma.com/proto/track1-day18-group3/option-b-concept-selection)
-* **Option C: Context-Aware Chatbot Panel (Conversational)**
-  * *Mô tả:* Một thanh chat trượt ra bên cạnh bài học. Học viên có thể tự do gõ câu hỏi hoặc bấm các prompt gợi ý nhanh để tương tác với AI Tutor.
-  * *Link Prototype:* [Figma Link Option C - Conversational Chat](https://www.figma.com/proto/track1-day18-group3/option-c-conversational-chat)
+## 5. Prototype Feedback
 
-Tất cả các link và kịch bản nhiệm vụ kiểm thử chung được lưu tại: [prototype-link.md](file:///d:/Track1_Day18_2A202601594_NguyenTriTrung/prototype-link.md)
+- Observation từ phiên tôi facilitate (Tester Phạm Tiến Đại - Option A): Người test thấy chức năng hỏi trực tiếp khá dễ sử dụng và phù hợp khi đang học bài. Tuy nhiên, cần làm nổi bật trạng thái "Chưa trả lời" để người học biết câu hỏi đã được giảng viên tiếp nhận hay chưa.
+- Ba feedback synthesis (3 điểm tổng hợp chính):
+  * Người học cần được hỗ trợ nhanh mà không làm gián đoạn bài giảng.
+  * Giao diện và các nút chức năng cần rõ ràng, dễ hiểu.
+  * Nội dung hỗ trợ nên ngắn gọn, chỉ hiển thị thông tin cần thiết để tránh làm người học mất tập trung.
+- Next Change (thay đổi tiếp theo sẽ làm): Rút gọn nội dung hiển thị, làm rõ các nút chức năng và tối ưu luồng tương tác để người học có thể nhanh chóng quay lại bài giảng.
+- Still Unproven (giả định vẫn chưa được kiểm chứng): Chưa chứng minh được việc sử dụng chức năng hỗ trợ trong thời gian thực thực sự giúp học viên theo kịp bài giảng tốt hơn.
 
----
+(Chi tiết đầy đủ xem tại [prototype-feedback-note.md](prototype-feedback-note.md) và [group-feedback-synthesis.md](group-feedback-synthesis.md))
 
-## 4. Đóng góp của tôi trong nhóm (My Contribution)
+## 6. AI Support Log
 
-Trong buổi làm việc nhóm Day 18, tôi (Nguyễn Trí Trung) đã trực tiếp đảm nhiệm các công việc sau:
-1. **Thiết kế Option A (System-Led Diagnostic):** Trực tiếp thiết kế luồng tương tác và vẽ wireframe/prototype cho Option A, đảm bảo tích hợp nút thoát hiểm, hiển thị chỉ số không chắc chắn của AI để tăng tính kiểm soát của con người (Human Control).
-2. **Chuẩn bị Kịch bản & Tổ chức Kiểm thử:** Thiết lập nhiệm vụ kiểm thử tiêu chuẩn (Standard Test Task) về "Nested For Loops" để đảm bảo tính độc lập và sẵn sàng kiểm thử của cả 3 option (Gate 4).
-3. **Điều phối Thử nghiệm (Facilitation & Observation):** Trực tiếp chạy phiên thử nghiệm Option A với tester Đỗ Minh Quân, ghi lại biên bản kiểm thử chi tiết tại [prototype-feedback-note.md](file:///d:/Track1_Day18_2A202601594_NguyenTriTrung/prototype-feedback-note.md).
-4. **Tổng hợp phản hồi nhóm (Synthesis):** Chủ trì buổi họp nhóm để đối chiếu ghi chép từ 3 phiên kiểm thử, tìm ra điểm chung/khác biệt và viết bản tổng hợp phản hồi tại [group-feedback-synthesis.md](file:///d:/Track1_Day18_2A202601594_NguyenTriTrung/group-feedback-synthesis.md).
+Tóm tắt AI đã hỗ trợ gì, sai/hời hợt ở đâu, và bạn đã tự sửa gì (chi tiết đầy đủ xem [ai-support-log.md](ai-support-log.md)).
 
----
-
-## 5. Kết quả thử nghiệm Prototype (Prototype Feedback)
-
-Tổng hợp chi tiết kết quả thử nghiệm được lưu trữ tại: [group-feedback-synthesis.md](file:///d:/Track1_Day18_2A202601594_NguyenTriTrung/group-feedback-synthesis.md)
-
-* **Quan sát từ phiên tôi facilitate (Tester Đỗ Minh Quân - Option A):**
-  * Quân hoàn thành nhiệm vụ sửa code thành công nhờ sơ đồ giải thích trực quan của Refresher.
-  * Quân có cảm giác bị "ép buộc" làm quiz khi đang vội và đề xuất làm nổi bật nút bỏ qua chẩn đoán ("Xem giải thích trực tiếp").
-* **Tổng hợp phản hồi 3 phiên (3-Tester Synthesis):**
-  * *Điểm chung:* Cả 3 tester đều đánh giá cao tính trực quan của phần giải thích (sơ đồ, hình ảnh lật thẻ) và sự tiện lợi khi được hỗ trợ "tại chỗ" (in-context).
-  * *Khác biệt:* Option A tìm đúng bệnh nhưng gây ức chế ngắn hạn; Option B thoải mái hơn nhưng học viên dễ chọn sai lỗ hổng thực tế; Option C linh hoạt nhưng dễ làm loãng thông tin do phản hồi của AI chatbot quá dài.
-* **Next Change (Định hướng cải tiến):** Kết hợp cả 3 option thành luồng Hybrid: Khi bấm nút trợ giúp, hiển thị menu chọn khái niệm trước (Option B), đi kèm lựa chọn "Chẩn đoán tự động bằng quiz nhanh" (Option A). Refresher hiển thị dưới dạng sơ đồ trực quan kết hợp flashcard tương tác. Đồng thời, cải tiến nút "Bỏ qua chẩn đoán" trong Option A to rõ hơn để tăng tính kiểm soát.
-* **Still Unproven (Điều chưa chứng minh được):** Liệu học viên có duy trì thói quen bấm nút này lâu dài hay không, và liệu việc gỡ kẹt liên tục tại chỗ có làm học viên lười tự tư duy sâu về sau.
-
----
-
-## 6. Nhật ký hỗ trợ của AI (AI Support Log)
-
-Chi tiết nhật ký tương tác và các quyết định Human-AI được ghi nhận tại: [ai-support-log.md](file:///d:/Track1_Day18_2A202601594_NguyenTriTrung/ai-support-log.md)
-
-* **AI đã giúp:** Khởi tạo cấu trúc các file, phác thảo sự khác biệt cơ chế của 3 option và định hình văn phong các tài liệu tổng hợp phản hồi.
-* **Sai sót/Hời hợt của AI:** AI đề xuất 3 option quá giống nhau về cơ chế (chỉ khác layout/nút bấm) và bỏ qua các yếu tố chi tiết về Human Control (Gate 2 & 3).
-* **Tôi tự sửa:** Yêu cầu AI đổi 3 option thành 3 cơ chế riêng biệt (System-led vs. Selection vs. Chat sidebar), bổ sung nút skip chẩn đoán to rõ cho Option A, hiển thị mức độ tin cậy để biểu thị Uncertainty, và giới hạn kịch bản kiểm thử vào một lỗi code vòng lặp cụ thể (Gate 4).
+* AI hỗ trợ: Brainstorm 3 phương án, viết và chỉnh sửa mô tả Option A/B/C, hỗ trợ so sánh các phương án và tổng hợp feedback.
+* Sai / hời hợt: Một số ý tưởng và đánh giá ban đầu còn chung chung, chưa dựa trên dữ liệu test thực tế.
+* Tôi đã tự sửa: Tự chọn lọc, điều chỉnh nội dung theo đúng bài toán, prototype và feedback thực tế của nhóm.

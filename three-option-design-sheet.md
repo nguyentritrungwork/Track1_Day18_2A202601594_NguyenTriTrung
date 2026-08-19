@@ -1,52 +1,53 @@
+# Three-Option Design Sheet
 
+> Nếu nhóm dùng board chung (Figma/Miro/Notion...), dán link tại đây và chỉ tóm tắt bên dưới:
+> **Link board chung của nhóm:** {{link}}
 
-**Case:** Case A — AI Tutor: Diagnostic Refresher  
-**Nhóm:** Nhóm 3 — E403  
-**Dự án:** AI Tutor hỗ trợ học viên vượt qua điểm nghẽn kiến thức  
+## Hypothesis Problem
 
-Bản thiết kế này mô tả chi tiết 3 Option giải pháp khác nhau về mặt cơ chế (Mechanism) và cách phân chia nhiệm vụ giữa Người và AI (Human-AI Task Split) nhằm giải quyết cùng một Hypothesis Problem.
+- Học viên khó theo kịp bài giảng vì  **không hiểu kiến thức nền nhưng không biết mình thiếu gì** , đồng thời  **không có thời gian tra cứu hoặc hỏi ngay khi bài giảng vẫn tiếp tục** . Vì vậy, họ thường bỏ qua phần chưa hiểu, khiến  **lỗ hổng kiến thức ngày càng tích tụ và khó theo kịp các nội dung phía sau** .
 
----
+## Option A:
 
-## 1. Option A: System-Led Diagnostic (AI-Driven)
-*Cơ chế tự động chẩn đoán chủ động do hệ thống dẫn dắt.*
+- **Mô tả:** Khi đang học và không hiểu một nội dung trên slide, học viên có thể nhấn nút “Hỏi” bên dưới slide và nhập câu hỏi. Câu hỏi sẽ được gửi đến giảng viên, đồng thời hệ thống xác định slide chứa nội dung liên quan để giảng viên nhanh chóng biết học viên đang thắc mắc ở phần nào. Giảng viên có thể xem và trả lời câu hỏi ngay trong quá trình giảng dạy. Các câu hỏi được phân loại “Đã trả lời” hoặc “Chưa trả lời” để dễ theo dõi.
+- **Giải quyết giả định nào:** Nếu học viên có một cách  đặt câu hỏi nhanh và trực tiếp mà không cần ngắt lời giảng viên , giảng viên sẽ biết chính xác học viên đang gặp khó khăn ở đâu và có thể giải đáp kịp thời, giúp hạn chế việc học viên bỏ qua phần chưa hiểu.
+- **Điểm khác biệt so với B/C:** Khác với Option B tập trung vào việc tổng quan và điều hướng kiến thức bằng sơ đồ, và Option C tập trung vào việc xác định, giải thích và bổ sung kiến thức nền bằng AI, Option A tập trung vào tương tác trực tiếp giữa học viên và giảng viên để giải quyết thắc mắc ngay trong buổi học.
+- **Người phụ trách:** Đỗ Thu Liễu - Nguyễn Trí Trung
 
-* **Cơ chế hoạt động:** Khi học viên bấm nút "Tôi vẫn chưa hiểu", AI Tutor sẽ chủ động nắm quyền kiểm soát luồng học. Dựa trên lịch sử trả lời sai gần đây và nội dung slide hiện tại, AI sẽ chọn ra 2 khái niệm nền nghi ngờ nhất, tạo ra 2-3 câu hỏi trắc nghiệm chẩn đoán ngắn (Diagnostic MCQ). Dựa vào câu trả lời của học viên, AI xác định chính xác lỗ hổng, hiển thị một đoạn giải thích ngắn kèm ví dụ và đưa học viên trở lại bài học.
-* **Phân chia công việc giữa User và AI (Human-AI Split):**
-  * **AI:** Phân tích ngữ cảnh, lựa chọn khái niệm chẩn đoán, tự động tạo câu hỏi trắc nghiệm, đánh giá kết quả, và soạn thảo Refresher.
-  * **Học viên (User):** Trả lời các câu hỏi trắc nghiệm chẩn đoán và đọc phần giải thích được đề xuất.
-* **Cơ chế kiểm soát của con người (Human Control):**
-  * **Expectation (Kỳ vọng):** Học viên hiểu rằng hệ thống đang hỏi để chẩn đoán lỗ hổng, giúp họ không phải tự dò tìm. Hệ thống thông báo rõ: "Để giúp bạn hiểu bài, hãy trả lời nhanh 2 câu hỏi sau để mình tìm đúng chỗ bạn bị kẹt nhé."
-  * **Agency (Khả năng can thiệp):** Học viên có thể bỏ qua chẩn đoán (nút "Xem giải thích trực tiếp") hoặc chọn xem danh sách các khái niệm liên quan thay vì làm trắc nghiệm.
-  * **Evidence/Uncertainty (Tín hiệu không chắc chắn):** Hệ thống hiển thị mức độ nghi ngờ của AI (ví dụ: "Mình đoán bạn đang vướng ở '0-based Indexing' (90%) hoặc 'Loop Condition' (10%)").
-  * **Recovery (Đường thoát hiểm):** Nút "Quay lại bài học" luôn xuất hiện ở góc màn hình để học viên thoát ra ngay lập tức nếu cảm thấy chẩn đoán bị sai hoặc phiền phức.
+## Option B:
 
----
+- **Mô tả:** Hệ thống cung cấp nút Sơ đồ tư duy để học viên có thể nhanh chóng xem tổng quan bài học. Khi nhấn vào nút này, hệ thống hiển thị  sơ đồ kiến thức của toàn bộ bài , phân chia nội dung theo từng slide. Học viên có thể nhấn vào từng chủ đề để xem  những nội dung chính cần học . Khi chọn một slide cụ thể, hệ thống mở một cửa sổ thông tin bên cạnh slide, cung cấp tóm tắt nội dung slide, các kiến thức nền liên quan và các tài liệu/link để tìm hiểu thêm .
+- **Giải quyết giả định nào:** Nếu học viên có thể  nhanh chóng nhìn thấy bức tranh tổng thể của bài học, biết nội dung quan trọng ở từng slide và được gợi ý kiến thức nền liên quan , họ sẽ dễ xác định mình đang thiếu kiến thức gì và có thể bổ sung sau mà  không cần dừng hoặc làm gián đoạn bài giảng .
+- **Điểm khác biệt so với A/C:** Option B tập trung vào việc  giúp học viên nhìn thấy bức tranh tổng thể và cấu trúc kiến thức của toàn bộ bài học , từ đó dễ định hướng và tìm lại nội dung cần học. Trong khi Option A tập trung vào việc  gửi câu hỏi trực tiếp cho giảng viên để được giải đáp , thì Option C tập trung vào phát hiện và lấp đầy lỗ hổng kiến thức nền bằng AI thông qua giải thích từ khóa và bài kiểm tra nhanh.
+- **Người phụ trách:** Phạm Tiến Đại
 
-## 2. Option B: User-Led Concept Selection (Cooperative)
-*Cơ chế hợp tác, AI đề xuất danh mục và học viên chủ động tự xác định lỗ hổng.*
+## Option C:
 
-* **Cơ chế hoạt động:** Khi bấm nút "Tôi vẫn chưa hiểu", hệ thống không tự chẩn đoán mà hiển thị một bảng chọn (Menu) chứa 3-4 khái niệm nền liên quan trực tiếp đến bài học hiện tại (do AI trích xuất và ánh xạ từ bài học). Học viên sẽ tự chọn khái niệm mình cảm thấy mơ hồ nhất. AI sau đó sẽ hiển thị một phần giải thích ngắn gọn đi kèm một hoạt động tương tác nhỏ (như lật thẻ hoặc điền vào chỗ trống) để học viên tự kiểm tra sự hiểu biết trước khi quay lại bài học.
-* **Phân chia công việc giữa User và AI (Human-AI Split):**
-  * **AI:** Quét nội dung bài học, ánh xạ các khái niệm nền liên quan, tạo Refresher động và hoạt động tương tác cho khái niệm học viên đã chọn.
-  * **Học viên (User):** Tự đánh giá bản thân (Self-assessment) để lựa chọn đúng khái niệm mình cần ôn từ danh sách gợi ý.
-* **Cơ chế kiểm soát của con người (Human Control):**
-  * **Expectation (Kỳ vọng):** Học viên biết họ sẽ được cung cấp một danh mục khái niệm để tự lựa chọn. Hệ thống thông báo: "Dưới đây là các khái niệm nền cần thiết cho bài học này. Hãy chọn phần bạn muốn ôn lại nhé!"
-  * **Agency (Khả năng can thiệp):** Học viên có toàn quyền lựa chọn khái niệm muốn xem, có thể chọn nhiều khái niệm cùng lúc hoặc chuyển đổi qua lại giữa các khái niệm.
-  * **Evidence/Uncertainty (Tín hiệu không chắc chắn):** Mỗi khái niệm được đính kèm một câu mô tả ngắn về lý do tại sao nó lại quan trọng đối với bài học hiện tại (ví dụ: "Bạn cần khái niệm này để hiểu dòng code số 7").
-  * **Recovery (Đường thoát hiểm):** Học viên có thể bấm "Đóng" để quay lại bài học chính hoặc bấm "Đổi khái niệm khác" để quay lại menu chọn ban đầu bất cứ lúc nào.
+- **Mô tả:** 
 
----
+Hệ thống bổ sung chức năng “Khái niệm nền” ngay bên dưới slide, mặc định ở trạng thái tắt để không làm gián đoạn quá trình học. Khi bật, các từ khóa quan trọng do giảng viên đánh dấu sẽ được tô vàng trên slide. Học viên có thể nhấn vào từng từ khóa để xem thông tin do AI cung cấp, bao gồm  giải thích khái niệm, vai trò/công dụng và mối liên hệ của khái niệm đó với nội dung trong slide .
 
-## 3. Option C: Context-Aware Chatbot Panel (Conversational)
-*Cơ chế đối thoại tự do dưới dạng thanh chat bên cạnh bài học.*
+Với những từ khóa mới mà giảng viên chưa đánh dấu, học viên có thể bôi đen từ khóa để xuất hiện tùy chọn “Giải thích”. Khi chọn, hệ thống hiển thị một cửa sổ nhỏ chứa phần giải thích do AI tạo ra. Trong cửa sổ này có nút  “Tôi vẫn chưa rõ” . Khi học viên nhấn nút này lần đầu, hệ thống ghi nhận ẩn danh rằng học viên đang gặp khó khăn với từ khóa đó và lưu số liệu để giảng viên theo dõi.
 
-* **Cơ chế hoạt động:** Khi bấm nút "Tôi vẫn chưa hiểu", một thanh chat (Side Panel) sẽ trượt ra từ bên phải màn hình, giữ nguyên nội dung bài học bên trái. AI Chatbot bắt đầu bằng một câu hỏi thân thiện: "Mình thấy bạn đang dừng ở Slide 'Vòng lặp For'. Bạn gặp khó khăn ở dòng code nào hoặc từ khóa nào?". Học viên có thể tự do nhập câu hỏi (Free-text prompt) hoặc click vào các câu hỏi gợi ý nhanh (Quick prompts) như "Giải thích dòng 3", "Ví dụ dễ hiểu hơn", hoặc "Dịch cú pháp này sang Python".
-* **Phân chia công việc giữa User và AI (Human-AI Split):**
-  * **AI:** Đóng vai trò là gia sư đàm thoại, phân tích ngữ cảnh bài học hiện tại và câu hỏi của học viên để đưa ra câu trả lời cá nhân hóa theo thời gian thực.
-  * **Học viên (User):** Chủ động đặt câu hỏi hoặc định hướng cuộc hội thoại thông qua các prompt để lấy đúng thông tin mình cần.
-* **Cơ chế kiểm soát của con người (Human Control):**
-  * **Expectation (Kỳ vọng):** Học viên biết đây là không gian đối thoại tự do và riêng tư. AI bắt đầu bằng việc chào hỏi và đưa ra các gợi ý mẫu để hướng dẫn học viên cách bắt đầu.
-  * **Agency (Khả năng can thiệp):** Học viên có thể gõ bất kỳ câu hỏi nào họ muốn, điều khiển chiều sâu giải thích của AI bằng cách yêu cầu "giải thích chi tiết hơn" hoặc "tóm tắt ngắn gọn".
-  * **Evidence/Uncertainty (Tín hiệu không chắc chắn):** Khi trả lời, AI trích dẫn chính xác dòng code hoặc từ khóa trong bài học mà nó đang giải thích để học viên đối chiếu.
-  * **Recovery (Đường thoát hiểm):** Một nút lớn "Đóng Chat & Học Tiếp" ở đầu bảng chat giúp đóng thanh chat ngay lập tức, trả lại 100% diện tích màn hình cho bài học. Lịch sử chat được tự động lưu lại trong một biểu tượng nhỏ ở góc để học viên có thể mở lại khi cần mà không bị mất dữ liệu.
+Bên cạnh đó, hệ thống có chức năng “Vẫn chưa hiểu?!” ở phía dưới slide. Khi học viên cảm thấy chưa nắm được nội dung, họ có thể mở chức năng này để thực hiện một bài  trắc nghiệm nhanh kiểm tra kiến thức nền . Dựa trên câu trả lời, hệ thống xác định những khái niệm học viên đã nắm được và những phần kiến thức còn yếu hoặc bị thiếu.
+
+Sau khi hoàn thành, học viên có thể chọn “Xem giải thích” để AI tổng hợp và giải thích các kiến thức còn thiếu, đồng thời liên kết chúng với nội dung đang học trên slide. Hệ thống cũng đề xuất các tài liệu và đường link liên quan để học viên có thể tìm hiểu thêm. Khi đã hiểu, học viên chọn “Tiếp tục học” để đóng phần hỗ trợ và quay lại bài giảng.
+
+Đối với giảng viên, dữ liệu về những từ khóa học viên gặp khó khăn được  ghi nhận dưới dạng ẩn danh . Khi mở  “Luồng giảng viên” , giảng viên có thể xem những từ khóa có số lượt học viên chọn “Tôi vẫn chưa rõ” cao. Từ đó, giảng viên có thể duyệt các từ khóa này, đánh dấu chúng là khái niệm quan trọng và bổ sung thông tin vào slide cho những khóa học sau.
+
+- **Giải quyết giả định nào:** Nếu học viên được hỗ trợ  xác định và giải thích nhanh các từ khóa chưa hiểu ngay trong lúc học , đồng thời có công cụ kiểm tra kiến thức nền khi vẫn còn thiếu, thì họ có thể  xác định chính xác lỗ hổng kiến thức và chủ động bổ sung mà không cần làm gián đoạn bài giảng . Dữ liệu ẩn danh từ nhiều học viên cũng giúp giảng viên nhận biết những khái niệm khó và cải thiện nội dung bài giảng trong các khóa học tiếp theo.
+- **Điểm khác biệt so với A/B:** Option C tập trung vào xác định và lấp đầy lỗ hổng kiến thức nền của học viên bằng AI ngay trong quá trình học. Trong khi Option A tập trung vào việc  học viên đặt câu hỏi trực tiếp cho giảng viên , và Option B tập trung vào việc  cung cấp cái nhìn tổng quan, sơ đồ hóa nội dung bài học . Option C nổi bật ở khả năng  giải thích từ khóa, kiểm tra kiến thức nền, xác định phần kiến thức còn thiếu và đề xuất tài liệu để học viên bổ sung .
+- **Người phụ trách:** Tạ Thị Thu Huyền
+
+## So sánh nhanh
+
+| Tiêu chí                       | Option A                                                                                             | Option B                                                                                                        | Option C                                                                                                                                   |
+| -------------------------------- | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Độ khả thi                    | **Cao** – Chức năng hỏi và quản lý câu hỏi tương đối đơn giản, dễ triển khai | **Cao** – Có thể xây dựng dựa trên nội dung slide và AI để tạo sơ đồ/tóm tắt             | **Trung bình** – Có nhiều chức năng AI, kiểm tra kiến thức và thu thập dữ liệu                                          |
+| Mức độ giải quyết vấn đề | **Khá cao** – Giúp học viên được giải đáp trực tiếp khi không hiểu              | **Cao** – Giúp học viên nắm tổng quan, xác định nội dung quan trọng và kiến thức liên quan | **Rất cao** – Có thể xác định từ khóa chưa hiểu, tìm kiến thức nền còn thiếu và hỗ trợ bổ sung kiến thức      |
+| Rủi ro/giả định chưa chắc  | **Thấp** – Phụ thuộc vào khả năng giảng viên phản hồi kịp thời                    | **Trung bình** – AI có thể tóm tắt hoặc liên kết kiến thức chưa chính xác                   | **Cao** – AI có thể xác định sai lỗ hổng kiến thức; việc tạo câu hỏi và suy luận kết quả cần độ chính xác cao |
+
+## Lựa chọn cuối để làm prototype
+
+- **Option được chọn:** C
+- **Lý do chọn:** Nhóm chọn Option C vì nó giải quyết trực tiếp nguyên nhân khiến học viên bị mất gốc: không biết mình đang thiếu kiến thức nào. Hệ thống không chỉ giải thích từ khóa mà còn xác định kiến thức nền còn thiếu và hỗ trợ học viên bổ sung ngay mà không làm gián đoạn bài giảng.
